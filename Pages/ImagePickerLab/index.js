@@ -55,7 +55,7 @@ export default class ImagePickerLab extends Component {
 		return (
 			<View style={styles.container}>
 				<TouchableOpacity onPress={this.onPress}>
-					<Text style={styles.label}> Touch me </Text>
+					<Text style={styles.label}> Open Image Picker </Text>
 				</TouchableOpacity>
 			</View>
 		);

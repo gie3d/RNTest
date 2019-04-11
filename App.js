@@ -12,7 +12,7 @@ const HomeStack = createStackNavigator(
 		ImagePickerLab: { screen: ImagePickerLab },
 	},
 	{
-		initialRouteName: 'ImagePickerLab',
+		initialRouteName: 'Home',
 	}
 );
 
