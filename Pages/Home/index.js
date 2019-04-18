@@ -30,6 +30,12 @@ export default class Home extends Component {
 					target: 'ImagePickerLab',
 					description: 'ทดสอบการเลือกรูปและถ่ายรูป',
 				},
+				{
+					id: 3,
+					name: 'Image Zoom',
+					target: 'ImagePanZoom',
+					description: 'ทดสอบการ Zoom รูป',
+				},
 			],
 		};
 	}
