@@ -36,6 +36,12 @@ export default class Home extends Component {
 					target: 'ImagePanZoom',
 					description: 'ทดสอบการ Zoom รูป',
 				},
+				{
+					id: 4,
+					name: 'Cache Image',
+					target: 'CacheImage',
+					description: 'ทดสอบการ Cache รูป',
+				},
 			],
 		};
 	}

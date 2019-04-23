@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import FlatListLab from './Pages/FlatListLab';
 import ImagePickerLab from './Pages/ImagePickerLab';
 import ImagePanZoom from './Pages/ImagePanZoom';
+import CacheImage from './Pages/CacheImage';
 
 const HomeStack = createStackNavigator(
 	{
@@ -12,6 +13,7 @@ const HomeStack = createStackNavigator(
 		FlatListLab: { screen: FlatListLab },
 		ImagePickerLab: { screen: ImagePickerLab },
 		ImagePanZoom: { screen: ImagePanZoom },
+		CacheImage: { screen: CacheImage },
 	},
 	{
 		initialRouteName: 'Home',

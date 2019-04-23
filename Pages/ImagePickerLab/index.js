@@ -13,6 +13,7 @@ export default class ImagePickerLab extends Component {
 		super(props);
 		this.state = {
 			avatarSource: '',
+			source: '',
 		};
 	}
 
@@ -47,6 +48,9 @@ export default class ImagePickerLab extends Component {
 				// You can also display the image using data:
 				// const source = { uri: 'data:image/jpeg;base64,' + response.data };
 				console.log('select image', source);
+				this.setState({
+					source,
+				});
 			}
 		});
 	};
@@ -55,6 +59,12 @@ export default class ImagePickerLab extends Component {
 		return (
 			<View style={styles.container}>
 				<TouchableOpacity onPress={this.onPress}>
+					{this.state.source ? (
+						<Image
+							source={this.state.source}
+							style={{ width: 200, height: 200, flex: 1 }}
+						/>
+					) : null}
 					<Text style={styles.label}> Open Image Picker </Text>
 				</TouchableOpacity>
 			</View>
