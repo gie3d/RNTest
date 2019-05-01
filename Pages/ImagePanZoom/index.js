@@ -33,7 +33,17 @@ export default class ImagePanZoom extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Modal visible={true} transparent={true}>
+				<Modal
+					visible={true}
+					transparent={true}
+					supportedOrientations={[
+						'portrait',
+						'portrait-upside-down',
+						'landscape',
+						'landscape-left',
+						'landscape-right',
+					]}
+				>
 					<ImageViewer imageUrls={images} />
 				</Modal>
 			</View>
