@@ -31,6 +31,7 @@ export default class ImagePanZoom extends Component {
 	}
 
 	render() {
+		// test
 		return (
 			<View style={styles.container}>
 				<Modal
