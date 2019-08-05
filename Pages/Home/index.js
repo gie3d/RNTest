@@ -42,6 +42,12 @@ export default class Home extends Component {
 					target: 'CacheImage',
 					description: 'ทดสอบการ Cache รูป',
 				},
+				{
+					id: 6,
+					name: 'Universal App Link',
+					target: 'UniversalLinks',
+					description: 'ทดสอบการ Link จากภายนอก',
+				},
 			],
 		};
 	}
