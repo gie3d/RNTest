@@ -42,6 +42,12 @@ export default class Home extends Component {
 					target: 'CacheImage',
 					description: 'ทดสอบการ Cache รูป',
 				},
+				{
+					id: 5,
+					name: 'Facebook Share',
+					target: 'FBShare',
+					description: 'ทดสอบการ Share',
+				},
 			],
 		};
 	}
