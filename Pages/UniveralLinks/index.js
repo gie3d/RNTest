@@ -19,10 +19,12 @@ export default class UniversalLinks extends Component {
 	}
 
 	render() {
+		const { params } = this.props.navigation.state;
+
 		return (
 			<View style={styles.container}>
 				<Text>Test Universal Link</Text>
-				<Text>ทดลองเปิด Web https://navyjone.com ดู</Text>
+				<Text>ทดลองเปิด Web https://navyjone.com ดู {params.abc}</Text>
 			</View>
 		);
 	}

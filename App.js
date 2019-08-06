@@ -15,11 +15,15 @@ const HomeStack = createStackNavigator(
 		ImagePickerLab: { screen: ImagePickerLab },
 		ImagePanZoom: { screen: ImagePanZoom },
 		CacheImage: { screen: CacheImage, path: '/cache-image' },
-		UniversalLinks: { screen: UniversalLinks, path: '/universal-links' },
+		UniversalLinks: {
+			screen: UniversalLinks,
+			path: '/universal-links/:abc',
+		},
 	},
 	{
 		initialRouteName: 'Home',
 	}
 );
 
-export default createAppContainer(HomeStack);
+const AppContainer = createAppContainer(HomeStack);
+export default () => <AppContainer uriPrefix="https://navyjone.com/applink" />;
