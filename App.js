@@ -6,6 +6,7 @@ import FlatListLab from './Pages/FlatListLab';
 import ImagePickerLab from './Pages/ImagePickerLab';
 import ImagePanZoom from './Pages/ImagePanZoom';
 import CacheImage from './Pages/CacheImage';
+import UniversalLinks from './Pages/UniveralLinks';
 
 const HomeStack = createStackNavigator(
 	{
@@ -13,11 +14,16 @@ const HomeStack = createStackNavigator(
 		FlatListLab: { screen: FlatListLab },
 		ImagePickerLab: { screen: ImagePickerLab },
 		ImagePanZoom: { screen: ImagePanZoom },
-		CacheImage: { screen: CacheImage },
+		CacheImage: { screen: CacheImage, path: '/cache-image' },
+		UniversalLinks: {
+			screen: UniversalLinks,
+			path: '/universal-links/:abc',
+		},
 	},
 	{
 		initialRouteName: 'Home',
 	}
 );
 
-export default createAppContainer(HomeStack);
+const AppContainer = createAppContainer(HomeStack);
+export default () => <AppContainer uriPrefix="https://navyjone.com/applink" />;

@@ -5,6 +5,7 @@ import {
 	FlatList,
 	StyleSheet,
 	TouchableOpacity,
+	Linking,
 } from 'react-native';
 
 export default class Home extends Component {
@@ -13,6 +14,24 @@ export default class Home extends Component {
 			title: 'NVJ Lab',
 		};
 	};
+
+	componentDidMount() {
+		Linking.addEventListener('url', this._handleOpenURL);
+		Linking.getInitialURL().then(url => {
+			console.log(url);
+			if (url) {
+				this._handleOpenURL({ url });
+			}
+		});
+	}
+
+	componentWillUnmount() {
+		Linking.removeEventListener('url', this._handleOpenURL);
+	}
+
+	_handleOpenURL(evt) {
+		console.log('handleOpenUrl', evt);
+	}
 
 	constructor(props) {
 		super(props);
@@ -41,6 +60,12 @@ export default class Home extends Component {
 					name: 'Cache Image',
 					target: 'CacheImage',
 					description: 'ทดสอบการ Cache รูป',
+				},
+				{
+					id: 6,
+					name: 'Universal App Link',
+					target: 'UniversalLinks',
+					description: 'ทดสอบการ Link จากภายนอก',
 				},
 			],
 		};
@@ -78,6 +103,7 @@ export default class Home extends Component {
 	};
 
 	render() {
+		console.log('render home');
 		return (
 			<View style={styles.container}>
 				<FlatList
