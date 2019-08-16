@@ -5,14 +5,8 @@ import {
 	StyleSheet,
 	TouchableHighlight,
 	Alert,
+	Share,
 } from 'react-native';
-
-import { LoginButton, ShareDialog } from 'react-native-fbsdk';
-
-const SHARE_LINK_CONTENT = {
-	contentType: 'link',
-	contentUrl: 'https://facebook.com',
-};
 
 export default class FBShare extends Component {
 	static navigationOptions = ({ navigation, screenProps }) => {
@@ -25,28 +19,28 @@ export default class FBShare extends Component {
 		super(props);
 	}
 
-	shareLinkWithShareDialog = async () => {
-		const canShow = await ShareDialog.canShow(SHARE_LINK_CONTENT);
-		if (canShow) {
-			try {
-				const { isCancelled, postId } = await ShareDialog.show(
-					SHARE_LINK_CONTENT
-				);
-				if (isCancelled) {
-					Alert.alert('Share cancelled');
-				} else {
-					Alert.alert('Share success with postId: ' + postId);
-				}
-			} catch (error) {
-				Alert.alert('Share fail with error: ' + error);
+	onClick = () => {
+		Share.share(
+			{
+				message: 'Test',
+				url: 'http://google.com',
+				title: 'Wow, did you see that?',
+			},
+			{
+				// Android only:
+				dialogTitle: 'Share BAM goodness',
+				// iOS only:
+				excludedActivityTypes: [
+					'com.apple.UIKit.activity.PostToTwitter',
+				],
 			}
-		}
+		);
 	};
 
 	render() {
 		return (
 			<View style={styles.container}>
-				<TouchableHighlight onPress={this.shareLinkWithShareDialog}>
+				<TouchableHighlight onPress={this.onClick}>
 					<Text>Share link with ShareDialog</Text>
 				</TouchableHighlight>
 			</View>
