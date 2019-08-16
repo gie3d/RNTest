@@ -1,43 +1,54 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { Text, View, TouchableOpacity } from 'react-native';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
-/*
-    iOS
-    File apple-app-site-association ถูกเอาไปวางไว้ที่ https://navyjone.com/.well-known
-    ทดสอบด้วยการเปิด https://navyjone.com ดู
-*/
-
-export default class UniversalLinks extends Component {
-	static navigationOptions = ({ navigation, screenProps }) => {
-		return {
-			title: 'Universal Link',
-		};
+class HomeScreen extends React.Component {
+	onPress = () => {
+		this.props.navigation.navigate('Settings');
 	};
-
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
-		const { params } = this.props.navigation.state;
-
 		return (
-			<View style={styles.container}>
-				<Text>Test Universal Link</Text>
-				<Text>ทดลองเปิด Web https://navyjone.com ดู {params.abc}</Text>
+			<View
+				style={{
+					flex: 1,
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Text>Home!</Text>
+				<TouchableOpacity onPress={this.onPress}>
+					<Text>Go to Settings</Text>
+				</TouchableOpacity>
 			</View>
 		);
 	}
 }
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-	label: {
-		fontSize: 20,
-		color: 'green',
-	},
+class SettingsScreen extends React.Component {
+	onPress = () => {
+		this.props.navigation.navigate('FlatListLab');
+	};
+	render() {
+		return (
+			<View
+				style={{
+					flex: 1,
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Text>Settings!</Text>
+				<TouchableOpacity onPress={this.onPress}>
+					<Text>Go to Another stack</Text>
+				</TouchableOpacity>
+			</View>
+		);
+	}
+}
+
+const TabNavigator = createBottomTabNavigator({
+	Home: { screen: HomeScreen, path: 'home' },
+	Settings: { screen: SettingsScreen, path: 'settings' },
 });
+
+export default createAppContainer(TabNavigator);
