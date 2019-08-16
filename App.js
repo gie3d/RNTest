@@ -20,11 +20,11 @@ const HomeStack = createStackNavigator(
 		CacheImage: { screen: CacheImage, path: '/cache-image' },
 		UniversalLinks: {
 			screen: UniversalLinks,
-			path: '/universal-links/:abc',
+			path: '/universal-links',
 		},
 	},
 	{
-		initialRouteName: 'FBShare',
+		initialRouteName: 'Home',
 	}
 );
 
