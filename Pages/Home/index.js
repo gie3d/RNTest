@@ -62,6 +62,12 @@ export default class Home extends Component {
 					description: 'ทดสอบการ Cache รูป',
 				},
 				{
+					id: 5,
+					name: 'Facebook Share',
+					target: 'FBShare',
+					description: 'ทดสอบการ Share',
+				},
+				{
 					id: 6,
 					name: 'Universal App Link',
 					target: 'UniversalLinks',
