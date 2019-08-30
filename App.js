@@ -8,6 +8,7 @@ import ImagePanZoom from './Pages/ImagePanZoom';
 import CacheImage from './Pages/CacheImage';
 import FBShare from './Pages/FBShare';
 import UniversalLinks from './Pages/UniveralLinks';
+import WebViewLink from './Pages/WebViewLink';
 
 const HomeStack = createStackNavigator(
 	{
@@ -22,6 +23,8 @@ const HomeStack = createStackNavigator(
 			screen: UniversalLinks,
 			path: '/universal-links',
 		},
+		WebViewLink: { screen: WebViewLink },
+		WebViewLink2: { screen: WebViewLink },
 	},
 	{
 		initialRouteName: 'Home',

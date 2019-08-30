@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 
 export default class Home extends Component {
-	static navigationOptions = ({ navigation, screenProps }) => {
+	static navigationOptions = ({ navigation }) => {
 		return {
-			title: 'NVJ Lab',
+			title: 'Labs',
 		};
 	};
 
@@ -72,6 +72,12 @@ export default class Home extends Component {
 					name: 'Universal App Link',
 					target: 'UniversalLinks',
 					description: 'ทดสอบการ Link จากภายนอก',
+				},
+				{
+					id: 7,
+					name: 'WebView',
+					target: 'WebViewLink',
+					description: 'ทดสอบ Web View',
 				},
 			],
 		};
